@@ -1,0 +1,32 @@
+/*************************************************************************
+    > File Name: Flyweight.h
+    > Author: Duke-wei
+    > Mail: 13540639584@163.com 
+    > Created Time: 2017年01月02日 星期一 14时29分15秒
+ ************************************************************************/
+
+#ifndef _FLYWEIGHT_H_
+#define _FLYWEIGHT_H_
+
+#include <string>
+using namespace std;
+class Flyweight{
+	public:
+		virtual ~Flyweight();
+		virtual void Operation(const string& extrinsicState);
+		string GetIntrinsicState();
+	protected:
+		Flyweight(string intrinsicState);
+	private:
+		string _intrinsicState;
+};
+
+class ConcreteFlyweight:public Flyweight{
+	public:
+		ConcreteFlyweight(string intrinsicState);
+		~ConcreteFlyweight();
+		void Operation(const string& extrinsicState);
+	protected:
+	private:
+};
+#endif
